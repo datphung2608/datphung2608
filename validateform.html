@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>Form Đăng Ký</h2>
+
+<form id="myForm">
+  <label for="fname">Họ tên:</label><br>
+  <input type="text" id="fname" name="fname"><br>
+
+  <p>Giới tính:<input type="radio" id="nam" name="nam">Nam</input><input type="radio" id="Nữ" name="nu">Nữ</input></p>
+
+  <label for="dob">Ngày tháng năm sinh:</label><br>
+  <input type="date" id="dob" name="dob"><br>
+  
+  <label for="phone">Số điện thoại:</label><br>
+  <input type="tel" id="phone" name="phone" pattern="[0-9]{10}"><br>
+  
+  <label for="hobby">Sở thích:</label><br>
+  <input type="text" id="hobby" name="hobby"><br>
+  
+  <input type="button" value="Submit" onclick="submitForm()">
+  <input type="reset" value="Reset">
+</form> 
+
+<script>
+function submitForm() {
+  var fname = document.getElementById('fname').value;
+  var dob = document.getElementById('dob').value;
+  var phone = document.getElementById('phone').value;
+  var hobby = document.getElementById('hobby').value;
+
+  if (phone.length != 10) {
+    alert('Số điện thoại phải có 10 số. Vui lòng điền lại.');
+    return;
+  }
+
+  console.log('Họ tên: ' + fname);
+  console.log('Ngày tháng năm sinh: ' + dob);
+  console.log('Số điện thoại: ' + phone);
+  console.log('Sở thích: ' + hobby);
+
+  alert('Đã điền thành công');
+}
+</script>
+
+</body>
+</html> 

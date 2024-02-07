@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>Phép tính và đổi màu kết quả</h2>
+
+<p>Nhập hai số:</p>
+<input id="num1" type="number">
+<input id="num2" type="number">
+
+<button onclick="calculateAndChangeColor()">Tính toán</button>
+
+<p id="addition"></p>
+<p id="subtraction"></p>
+<p id="multiplication"></p>
+<p id="division"></p>
+
+<script>
+function calculateAndChangeColor() {
+  var num1 = Number(document.getElementById("num1").value);
+  var num2 = Number(document.getElementById("num2").value);
+  
+  var addition = num1 + num2;
+  var subtraction = num1 - num2;
+  var multiplication = num1 * num2;
+  var division = num1 / num2;
+  
+  var results = [
+    {elementId: "addition", result: addition},
+    {elementId: "subtraction", result: subtraction},
+    {elementId: "multiplication", result: multiplication},
+    {elementId: "division", result: division}
+  ];
+  
+  for (var i = 0; i < results.length; i++) {
+    var resultElement = document.getElementById(results[i].elementId);
+    resultElement.innerHTML = "Kết quả: " + results[i].result;
+    
+    if (results[i].result > 0) {
+      resultElement.style.color = "green";
+    } else if (results[i].result < 0) {
+      resultElement.style.color = "red";
+    } else {
+      resultElement.style.color = "black";
+    }
+  }
+}
+</script>
+
+</body>
+</html>

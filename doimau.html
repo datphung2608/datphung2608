@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<button id="myButton" style="background-color:blue;">Nút xanh</button>
+
+<script>
+var isBlue = false;
+
+document.getElementById("myButton").onclick = function() {
+    if (!isBlue) {
+        document.body.style.backgroundColor = "blue";
+        isBlue = true;
+    } else {
+        document.body.style.backgroundColor = "";
+        isBlue = false;
+    }
+}
+</script>
+
+</body>
+</html> 
+
